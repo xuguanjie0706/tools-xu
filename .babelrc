@@ -1,0 +1,28 @@
+// {
+//   "presets": [
+//       ["latest", {
+//           "es2015": {
+//               "modules": false
+//           }
+//       }],
+//       ["@babel/env", { "targets": { "node": 6 } }]
+//   ],
+//   "plugins": ["lodash"]
+// }
+
+{
+  "presets": [
+    [
+      "@babel/preset-env"
+    ],
+    // ["@babel/env", { "targets": { "node": 6 } }]
+  ],
+  "plugins": [
+    // "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-class-properties"
+  ]
+
+  // "ignore": [
+  //     "node_modules/**"
+  //   ]
+}
