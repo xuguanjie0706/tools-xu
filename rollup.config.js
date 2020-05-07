@@ -15,7 +15,7 @@ export default {
     resolve(),
     commonjs(),
     babel(),
-    terser()
+    // terser()
   ],
   external: ['lodash']
 }

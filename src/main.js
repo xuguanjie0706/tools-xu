@@ -1,7 +1,7 @@
 /*
  * @Author: xgj
  * @since: 2020-04-17 15:37:46
- * @lastTime: 2020-04-19 14:22:36
+ * @lastTime: 2020-04-24 11:48:53
  * @LastAuthor: xgj
  * @FilePath: /tools-xu/src/main.js
  * @message: 
@@ -138,6 +138,34 @@ function arraySort(arr = []) {
   return arr.sort((x, y) => x - y)
 }
 
+/**
+ * @description 字符串复制的转成数组 通过空格分开 支持多空格
+ * @param {String}  str  字符串
+ * @param {arr}  arr  属性数字
+ * @return {Array} 
+ * @example getArray("1231 dsafda",["index"])
+ */
+
+function getArray(str, arr) {
+  var len = arr.length
+  var reg = /(^\s*)|(\s*$)/g
+  var a = str.replace(reg, "").replace(/\s+/g, " ").split(" ")
+  if (!len) {
+    return a
+  }
+  let array = []
+  for (let i = 0; i < Math.ceil((a.length - 1) / len); i++) {
+    let obj = {}
+    let index = 0
+    for (let j in arr) {
+      obj[arr[j]] = a[len * i + index]
+      index = (index + 1) % len
+    }
+    array.push(obj)
+  }
+  return array;
+}
+
 
 
 
@@ -151,5 +179,6 @@ export default {
   throttle,
   randomString,
   once,
-  arraySort
+  arraySort,
+  getArray
 }
